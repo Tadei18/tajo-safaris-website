@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #faf6e8;
+  --color-surface: #ffffff;
+  --color-ink: #1c1816;
+  --color-ink-soft: #4a423b;
+  --color-primary: #1f4a2e;
+  --color-primary-700: #163521;
+  --color-primary-300: #5c8a6d;
+  --color-accent: #d4a017;
+  --color-accent-600: #b38612;
+  --color-sand: #e8dcbc;
+  --color-rust: #9a4a1f;
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --shadow-soft: 0 8px 30px rgba(28, 24, 22, 0.08);
+  --shadow-lifted: 0 14px 40px rgba(28, 24, 22, 0.12);
+
+  --radius-card: 1rem;
+}
+
+:root {
+  --color-bg: #faf6e8;
+  --color-surface: #ffffff;
+  --color-ink: #1c1816;
+  --color-ink-soft: #4a423b;
+  --color-primary: #1f4a2e;
+  --color-primary-700: #163521;
+  --color-primary-300: #5c8a6d;
+  --color-accent: #d4a017;
+  --color-accent-600: #b38612;
+  --color-sand: #e8dcbc;
+  --color-rust: #9a4a1f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings:
+    "ss01" on,
+    "cv11" on;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-ink);
+  color: #fff;
+  border-radius: 0 0 0.75rem 0;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Small caps utility */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Hero h1 fluid sizing */
+.h1-hero {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.h2-section {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Focus visibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Ken Burns hero animation */
+@keyframes ken-burns {
+  0% {
+    transform: scale(1) translateZ(0);
+  }
+  100% {
+    transform: scale(1.08) translateZ(0);
+  }
+}
+.ken-burns {
+  animation: ken-burns 20s ease-in-out infinite alternate;
+}
+
+/* Snap utilities for horizontal scroll strips */
+.snap-strip {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.snap-strip > * {
+  scroll-snap-align: start;
+}
+
+/* Mask gradient for image fades */
+.fade-bottom {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 60%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .ken-burns,
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

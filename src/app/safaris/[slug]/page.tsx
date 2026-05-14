@@ -74,7 +74,7 @@ export default async function TourPage({
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-[center_30%]"
             aria-hidden
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/30" />

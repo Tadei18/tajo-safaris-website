@@ -130,8 +130,8 @@ export function TourFilters({
     state.months.length;
 
   return (
-    <div className="sticky top-20 z-30 -mx-6 border-y border-ink/10 bg-bg/95 px-6 py-4 backdrop-blur lg:-mx-10 lg:px-10">
-      <div className="mx-auto max-w-7xl">
+    <div className="sticky top-20 z-30 border-y border-ink/10 bg-bg/95 backdrop-blur">
+      <div className="mx-auto max-w-7xl px-6 py-4 lg:px-10">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
           <FilterChipGroup
             label="Duration"

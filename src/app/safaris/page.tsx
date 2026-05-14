@@ -12,12 +12,12 @@ export default function SafarisPage() {
       <section className="relative isolate flex min-h-[40vh] items-end overflow-hidden pt-20">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=1920&q=80"
+            src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=80"
             alt=""
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-[center_30%]"
             aria-hidden
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/50 to-ink/30" />

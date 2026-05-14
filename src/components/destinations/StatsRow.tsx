@@ -3,7 +3,7 @@ import type { Destination } from "@/types";
 
 export function StatsRow({ destination }: { destination: Destination }) {
   return (
-    <ul className="grid gap-4 rounded-2xl bg-sand/60 p-6 sm:grid-cols-3">
+    <ul className="relative z-10 grid gap-4 rounded-2xl bg-sand p-6 shadow-soft sm:grid-cols-3">
       <li className="flex items-center gap-3">
         <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
           <Ruler className="size-5" />

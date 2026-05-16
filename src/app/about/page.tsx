@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SafeImage } from "@/components/ui/safe-image";
 import { guides } from "@/data/guides";
 import { aboutMetadata } from "@/data/seo";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative isolate flex min-h-[40vh] items-end overflow-hidden pt-20">
         <div className="absolute inset-0 -z-10">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1920&q=80"
             alt=""
             fill

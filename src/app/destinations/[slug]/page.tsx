@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
+import { SafeImage } from "@/components/ui/safe-image";
 import {
   Cat,
   Wind,
@@ -70,7 +70,7 @@ export default async function DestinationPage({
       {/* Hero */}
       <section className="relative isolate flex min-h-[55vh] items-end overflow-hidden pt-20">
         <div className="absolute inset-0 -z-10">
-          <Image
+          <SafeImage
             src={d.heroImage}
             alt=""
             fill

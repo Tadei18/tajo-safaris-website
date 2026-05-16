@@ -171,7 +171,7 @@ export const destinations: Destination[] = [
     name: "Samburu",
     oneLineDraw: "Northern species you won't see further south.",
     heroImage:
-      "https://images.unsplash.com/photo-1534259694119-de26f9f7d7c4?w=1920&q=80",
+      "https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&w=1920",
     shortDescription:
       "Semi-arid scrubland north of Mount Kenya — home to the \"Samburu Five\" species found almost nowhere else on the safari circuit.",
     whyGo: [
@@ -221,7 +221,7 @@ export const destinations: Destination[] = [
     name: "Lake Nakuru",
     oneLineDraw: "Rhino sanctuary, alkaline shores.",
     heroImage:
-      "https://images.unsplash.com/photo-1547536241-37c8e0ac7da9?w=1920&q=80",
+      "https://images.pexels.com/photos/2295744/pexels-photo-2295744.jpeg?auto=compress&cs=tinysrgb&w=1920",
     shortDescription:
       "A compact, fenced national park in the Rift Valley — Kenya's most productive site for both black and white rhino, plus flamingos when lake levels suit.",
     whyGo: [

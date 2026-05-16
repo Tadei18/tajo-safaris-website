@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { SafeImage } from "@/components/ui/safe-image";
 import { MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import type { Tour } from "@/types";
@@ -12,7 +12,7 @@ export function TourCard({ tour }: { tour: Tour }) {
       className="group relative flex flex-col overflow-hidden rounded-2xl bg-surface shadow-soft transition-all duration-200 hover:-translate-y-1 hover:shadow-lifted focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4"
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-sand">
-        <Image
+        <SafeImage
           src={tour.heroImage}
           alt={tour.title}
           fill

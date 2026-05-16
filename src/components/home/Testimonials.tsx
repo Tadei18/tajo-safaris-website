@@ -5,15 +5,52 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 import { cn } from "@/lib/utils";
 
+const ROTATE_MS = 7000;
+const MANUAL_PAUSE_MS = 10000;
+
 export function Testimonials() {
   const [index, setIndex] = React.useState(0);
+  const [paused, setPaused] = React.useState(false);
+  const [manualPauseUntil, setManualPauseUntil] = React.useState(0);
+  const [reducedMotion, setReducedMotion] = React.useState(false);
   const total = testimonials.length;
+
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  React.useEffect(() => {
+    if (paused || reducedMotion) return;
+    const id = setInterval(() => {
+      if (Date.now() < manualPauseUntil) return;
+      setIndex((i) => (i + 1) % total);
+    }, ROTATE_MS);
+    return () => clearInterval(id);
+  }, [paused, manualPauseUntil, total, reducedMotion]);
+
+  const onManualNav = (fn: () => void) => {
+    fn();
+    setManualPauseUntil(Date.now() + MANUAL_PAUSE_MS);
+  };
 
   const prev = () => setIndex((i) => (i - 1 + total) % total);
   const next = () => setIndex((i) => (i + 1) % total);
 
   return (
-    <section className="bg-bg py-20 md:py-28">
+    <section
+      className="bg-bg py-20 md:py-28"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={() => setPaused(false)}
+      onTouchStart={() => setPaused(true)}
+      onTouchEnd={() => setPaused(false)}
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <header className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
@@ -25,7 +62,7 @@ export function Testimonials() {
           <div className="flex gap-2">
             <button
               type="button"
-              onClick={prev}
+              onClick={() => onManualNav(prev)}
               aria-label="Previous testimonial"
               className="inline-flex size-10 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink-soft transition-colors hover:bg-primary hover:text-white"
             >
@@ -33,7 +70,7 @@ export function Testimonials() {
             </button>
             <button
               type="button"
-              onClick={next}
+              onClick={() => onManualNav(next)}
               aria-label="Next testimonial"
               className="inline-flex size-10 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink-soft transition-colors hover:bg-primary hover:text-white"
             >
@@ -86,7 +123,7 @@ export function Testimonials() {
             <button
               key={i}
               type="button"
-              onClick={() => setIndex(i)}
+              onClick={() => onManualNav(() => setIndex(i))}
               aria-label={`Go to testimonial ${i + 1}`}
               className={cn(
                 "h-2 rounded-full transition-all",

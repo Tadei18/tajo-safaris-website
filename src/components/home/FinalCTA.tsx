@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { SafeImage } from "@/components/ui/safe-image";
 import { useChatLauncher } from "@/components/layout/ChatLauncher";
 import { whatsappUrl } from "@/lib/constants";
 
@@ -10,8 +10,8 @@ export function FinalCTA() {
   return (
     <section className="relative isolate overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <Image
-          src="https://images.unsplash.com/photo-1547536241-37c8e0ac7da9?w=1920&q=80"
+        <SafeImage
+          src="https://images.pexels.com/photos/259411/pexels-photo-259411.jpeg?auto=compress&cs=tinysrgb&w=1920"
           alt=""
           fill
           sizes="100vw"

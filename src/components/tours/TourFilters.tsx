@@ -2,7 +2,17 @@
 
 import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { X } from "lucide-react";
+import {
+  ArrowUpDown,
+  Calendar,
+  Check,
+  ChevronDown,
+  Clock,
+  MapPin,
+  Sparkles,
+  X,
+  type LucideIcon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type FilterState = {
@@ -120,21 +130,25 @@ export function TourFilters({
   onReset: () => void;
   resultCount: number;
 }) {
+  const [moreOpen, setMoreOpen] = React.useState(false);
+
   const toggleIn = (list: string[], value: string) =>
     list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 
-  const hasFilters =
-    state.durations.length ||
-    state.styles.length ||
-    state.destinations.length ||
+  const activeCount =
+    state.durations.length +
+    state.styles.length +
+    state.destinations.length +
     state.months.length;
+  const hasFilters = activeCount > 0;
 
   return (
     <div className="sticky top-20 z-30 border-y border-ink/10 bg-bg/95 backdrop-blur">
       <div className="mx-auto max-w-7xl px-6 py-4 lg:px-10">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-4">
           <FilterChipGroup
             label="Duration"
+            icon={Clock}
             options={DURATIONS.map((d) => ({ value: d, label: `${d} days` }))}
             selected={state.durations}
             onToggle={(v) =>
@@ -143,6 +157,7 @@ export function TourFilters({
           />
           <FilterChipGroup
             label="Style"
+            icon={Sparkles}
             options={STYLES.map((s) => ({ value: s, label: s }))}
             selected={state.styles}
             onToggle={(v) => onChange({ styles: toggleIn(state.styles, v) })}
@@ -152,13 +167,15 @@ export function TourFilters({
               <button
                 type="button"
                 onClick={onReset}
-                className="inline-flex items-center gap-1 text-xs font-medium text-ink-soft hover:text-rust"
+                className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 bg-white px-3 py-1.5 text-xs font-medium text-ink-soft transition-colors hover:border-rust hover:bg-rust hover:text-white"
               >
                 <X className="size-3" /> Clear all
               </button>
             ) : null}
-            <label className="flex items-center gap-2 text-xs">
-              <span className="text-ink-soft">Sort</span>
+            <label className="inline-flex items-center gap-1.5 text-xs">
+              <span className="inline-flex items-center gap-1.5 text-ink-soft">
+                <ArrowUpDown className="size-3.5 text-primary" /> Sort
+              </span>
               <select
                 value={state.sort}
                 onChange={(e) => onChange({ sort: e.target.value })}
@@ -174,34 +191,57 @@ export function TourFilters({
           </div>
         </div>
 
-        <details className="mt-3 group">
-          <summary className="cursor-pointer text-xs font-medium text-ink-soft hover:text-ink list-none flex items-center gap-1">
-            <span className="group-open:rotate-90 inline-block transition-transform">→</span>
+        <div className="mt-4">
+          <button
+            type="button"
+            onClick={() => setMoreOpen((v) => !v)}
+            aria-expanded={moreOpen}
+            className={cn(
+              "inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2 text-xs font-medium text-ink transition-colors",
+              moreOpen ? "bg-sand" : "bg-white hover:bg-sand/40"
+            )}
+          >
+            <ChevronDown
+              className={cn(
+                "size-3.5 transition-transform",
+                moreOpen ? "rotate-180" : ""
+              )}
+            />
             More filters · destinations &amp; departure month
-          </summary>
-          <div className="mt-3 flex flex-col gap-3">
-            <FilterChipGroup
-              label="Destination"
-              options={DESTINATIONS.map((d) => ({
-                value: d.slug,
-                label: d.label,
-              }))}
-              selected={state.destinations}
-              onToggle={(v) =>
-                onChange({ destinations: toggleIn(state.destinations, v) })
-              }
-            />
-            <FilterChipGroup
-              label="Month"
-              options={MONTHS.map((m) => ({ value: m, label: m }))}
-              selected={state.months}
-              onToggle={(v) => onChange({ months: toggleIn(state.months, v) })}
-            />
-          </div>
-        </details>
+          </button>
 
-        <p className="mt-3 text-xs text-ink-soft">
+          {moreOpen ? (
+            <div className="mt-4 flex flex-col gap-4 border-t border-ink/10 pt-4">
+              <FilterChipGroup
+                label="Destination"
+                icon={MapPin}
+                options={DESTINATIONS.map((d) => ({
+                  value: d.slug,
+                  label: d.label,
+                }))}
+                selected={state.destinations}
+                onToggle={(v) =>
+                  onChange({ destinations: toggleIn(state.destinations, v) })
+                }
+              />
+              <FilterChipGroup
+                label="Month"
+                icon={Calendar}
+                options={MONTHS.map((m) => ({ value: m, label: m }))}
+                selected={state.months}
+                onToggle={(v) => onChange({ months: toggleIn(state.months, v) })}
+              />
+            </div>
+          ) : null}
+        </div>
+
+        <p className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink">
           {resultCount} {resultCount === 1 ? "safari" : "safaris"} matching
+          {hasFilters ? (
+            <span className="rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold text-ink">
+              {activeCount} active
+            </span>
+          ) : null}
         </p>
       </div>
     </div>
@@ -210,11 +250,13 @@ export function TourFilters({
 
 function FilterChipGroup({
   label,
+  icon: Icon,
   options,
   selected,
   onToggle,
 }: {
   label: string;
+  icon: LucideIcon;
   options: { value: string; label: string }[];
   selected: string[];
   onToggle: (value: string) => void;
@@ -222,7 +264,9 @@ function FilterChipGroup({
   return (
     <fieldset className="flex flex-wrap items-center gap-2">
       <legend className="mr-1 text-xs font-medium text-ink-soft">
-        {label}
+        <span className="inline-flex items-center gap-1.5">
+          <Icon className="size-3.5 text-primary" /> {label}
+        </span>
       </legend>
       {options.map((o) => {
         const active = selected.includes(o.value);
@@ -233,12 +277,13 @@ function FilterChipGroup({
             onClick={() => onToggle(o.value)}
             aria-pressed={active}
             className={cn(
-              "h-8 rounded-full border px-3 text-xs font-medium transition-colors",
+              "inline-flex h-8 items-center gap-1 rounded-full border px-3 text-xs font-medium transition-all hover:scale-[1.03]",
               active
                 ? "border-primary bg-primary text-white"
-                : "border-ink/15 bg-white text-ink hover:border-primary"
+                : "border-ink/15 bg-white text-ink hover:border-primary/40 hover:bg-primary/5"
             )}
           >
+            {active ? <Check className="size-3" /> : null}
             {o.label}
           </button>
         );

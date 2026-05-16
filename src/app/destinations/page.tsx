@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { destinations } from "@/data/destinations";
 import { DestinationCard } from "@/components/destinations/DestinationCard";
+import { SafeImage } from "@/components/ui/safe-image";
 import { destinationsListMetadata } from "@/data/seo";
 
 export const metadata: Metadata = destinationsListMetadata;
@@ -11,7 +11,7 @@ export default function DestinationsPage() {
     <>
       <section className="relative isolate flex min-h-[40vh] items-end overflow-hidden pt-20">
         <div className="absolute inset-0 -z-10">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=1920&q=80"
             alt=""
             fill

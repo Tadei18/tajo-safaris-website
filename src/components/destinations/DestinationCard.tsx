@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { SafeImage } from "@/components/ui/safe-image";
 import type { Destination } from "@/types";
 
 export function DestinationCard({
@@ -16,7 +16,7 @@ export function DestinationCard({
       className={`group relative block overflow-hidden rounded-2xl border border-sand bg-surface shadow-soft transition-all duration-200 hover:-translate-y-1 hover:shadow-lifted focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4`}
     >
       <div className={`relative ${aspect} overflow-hidden`}>
-        <Image
+        <SafeImage
           src={destination.heroImage}
           alt={`${destination.name} — ${destination.oneLineDraw}`}
           fill

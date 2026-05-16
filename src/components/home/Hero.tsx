@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { SafeImage } from "@/components/ui/safe-image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { heroTrust } from "@/lib/constants";
@@ -20,7 +20,7 @@ export function Hero() {
           aria-hidden
         />
         <div className="ken-burns absolute inset-0">
-          <Image
+          <SafeImage
             src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=80"
             alt="Elephants on the Maasai Mara savanna at golden hour"
             fill

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/safe-image";
 
 // TODO: replace Unsplash placeholders with licensed photography before launch.
 const tiles = [
@@ -21,13 +21,13 @@ const tiles = [
     className: "col-span-3 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1534259694119-de26f9f7d7c4?w=1200&q=80",
+    src: "https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&w=1200",
     alt: "Reticulated giraffe close-up in northern Kenya scrub",
     caption: "Reticulated giraffe, Samburu",
     className: "col-span-3 row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1547536241-37c8e0ac7da9?w=1200&q=80",
+    src: "https://images.pexels.com/photos/110820/pexels-photo-110820.jpeg?auto=compress&cs=tinysrgb&w=1200",
     alt: "Pink flamingo flock on a Rift Valley lake at dawn",
     caption: "Flamingos, Lake Bogoria",
     className: "col-span-3 row-span-1",
@@ -51,7 +51,7 @@ export function VisualEssay() {
               key={tile.alt}
               className={`group relative overflow-hidden rounded-2xl bg-sand ${tile.className}`}
             >
-              <Image
+              <SafeImage
                 src={tile.src}
                 alt={tile.alt}
                 fill

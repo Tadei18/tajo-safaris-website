@@ -170,8 +170,7 @@ export const tours: Tour[] = [
           "Cancellations more than 60 days before departure: full refund less a $200 admin fee. Between 60 and 30 days: 50% refund. Within 30 days: no refund — but we'll work with you to reschedule to a different date within 12 months, with no penalty.",
       },
     ],
-    heroImage:
-      "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=80",
+    heroImage: "/images/tours/classic-mara-amboseli.webp",
     gallery: [
       { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80", alt: "Elephants on the savanna at sunset" },
       { src: "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=1200&q=80", alt: "Elephant herd in Amboseli with Kilimanjaro" },
@@ -315,8 +314,7 @@ export const tours: Tour[] = [
           "Migration-season cancellations more than 90 days out: full refund less $250 admin. 90–60 days: 50% refund. Inside 60 days: no refund but a credit toward a future trip within 12 months. The peak-season window is tight; reschedules are best routed to the same season the following year.",
       },
     ],
-    heroImage:
-      "https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=1920&q=80",
+    heroImage: "/images/tours/great-migration-special.webp",
     gallery: [
       { src: "https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=1200&q=80", alt: "Wildebeest gathering at the riverbank" },
       { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80", alt: "Elephants on the open Mara plain" },
@@ -518,8 +516,7 @@ export const tours: Tour[] = [
           "More than 90 days out: full refund less $300 admin. 90–60 days: 50% refund. Inside 60 days: no refund but a credit for 12 months. For peak July–October bookings, we hold camp space with a non-refundable deposit at the camps' request — we'll be explicit about this in the contract.",
       },
     ],
-    heroImage:
-      "https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    heroImage: "/images/tours/big-five-grand-circuit.webp",
     gallery: [
       { src: "https://images.pexels.com/photos/110820/pexels-photo-110820.jpeg?auto=compress&cs=tinysrgb&w=1200", alt: "Pink-tinged lake at dawn" },
       { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80", alt: "Elephants on the open plain" },
@@ -698,8 +695,7 @@ export const tours: Tour[] = [
           "More than 90 days out: full refund less $400 admin. 90–60 days: 40% refund. Inside 60 days: no refund but credit toward a future trip within 18 months. The luxury camps used here ask for non-refundable deposits closer to date; we'll itemise these clearly.",
       },
     ],
-    heroImage:
-      "https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    heroImage: "/images/tours/northern-frontier.webp",
     gallery: [
       { src: "https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&w=1200", alt: "Reticulated giraffe close-up" },
       { src: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=1200&q=80", alt: "Lion in early light" },
@@ -910,8 +906,7 @@ export const tours: Tour[] = [
           "More than 60 days out: full refund less $250 admin. 60–30 days: 50% refund. Inside 30 days: 25% refund. For family bookings we're more flexible than usual on reschedules — life with kids changes plans, we get it.",
       },
     ],
-    heroImage:
-      "https://images.unsplash.com/photo-1571406761758-9a3eed5338ef?w=1920&q=80",
+    heroImage: "/images/tours/family-safari-beach.webp",
     gallery: [
       { src: "https://images.unsplash.com/photo-1571406761758-9a3eed5338ef?w=1200&q=80", alt: "Beach palms and turquoise water" },
       { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80", alt: "Elephants on the savanna" },
@@ -1069,8 +1064,7 @@ export const tours: Tour[] = [
           "More than 30 days out: full refund less $100 admin. 30–14 days: 50% refund. Inside 14 days: no refund, but you can transfer the booking to someone else for free or move to a later departure for a $100 fee.",
       },
     ],
-    heroImage:
-      "https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=1920&q=80",
+    heroImage: "/images/tours/budget-camping-adventure.webp",
     gallery: [
       { src: "https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=1200&q=80", alt: "Wildebeest crossing the river" },
       { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80", alt: "Elephants in dust light" },

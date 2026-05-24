@@ -20,8 +20,7 @@ export const destinations: Destination[] = [
     slug: "maasai-mara",
     name: "Maasai Mara",
     oneLineDraw: "Migration & big cats.",
-    heroImage:
-      "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=80",
+    heroImage: "/images/destinations/maasai-mara.webp",
     shortDescription:
       "Kenya's flagship reserve — open savanna, dense predator populations, and the Great Migration crossings from July to October.",
     whyGo: [
@@ -70,8 +69,7 @@ export const destinations: Destination[] = [
     slug: "amboseli",
     name: "Amboseli",
     oneLineDraw: "Elephants under Kilimanjaro.",
-    heroImage:
-      "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=1920&q=80",
+    heroImage: "/images/destinations/amboseli.webp",
     shortDescription:
       "The classic Kenya photograph — long-tusked elephant families crossing dry lake beds with Mount Kilimanjaro filling the southern horizon.",
     whyGo: [
@@ -120,8 +118,7 @@ export const destinations: Destination[] = [
     slug: "tsavo",
     name: "Tsavo East & West",
     oneLineDraw: "Red elephants and lava country.",
-    heroImage:
-      "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80",
+    heroImage: "/images/destinations/tsavo.webp",
     shortDescription:
       "Kenya's largest wild place — 22,000 km² of dust-red elephants, ancient lava flows, and the spring-fed Mzima oasis.",
     whyGo: [
@@ -170,8 +167,7 @@ export const destinations: Destination[] = [
     slug: "samburu",
     name: "Samburu",
     oneLineDraw: "Northern species you won't see further south.",
-    heroImage:
-      "https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    heroImage: "/images/destinations/samburu.webp",
     shortDescription:
       "Semi-arid scrubland north of Mount Kenya — home to the \"Samburu Five\" species found almost nowhere else on the safari circuit.",
     whyGo: [
@@ -220,8 +216,7 @@ export const destinations: Destination[] = [
     slug: "lake-nakuru",
     name: "Lake Nakuru",
     oneLineDraw: "Rhino sanctuary, alkaline shores.",
-    heroImage:
-      "https://images.pexels.com/photos/2295744/pexels-photo-2295744.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    heroImage: "/images/destinations/lake-nakuru.webp",
     shortDescription:
       "A compact, fenced national park in the Rift Valley — Kenya's most productive site for both black and white rhino, plus flamingos when lake levels suit.",
     whyGo: [
@@ -270,8 +265,7 @@ export const destinations: Destination[] = [
     slug: "ol-pejeta",
     name: "Ol Pejeta",
     oneLineDraw: "Conservation work made visible.",
-    heroImage:
-      "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=1920&q=80",
+    heroImage: "/images/destinations/ol-pejeta.webp",
     shortDescription:
       "A private conservancy north of Mount Kenya — home to the last two northern white rhinos on earth and one of the best places in Kenya to see chimpanzees.",
     whyGo: [
@@ -320,8 +314,7 @@ export const destinations: Destination[] = [
     slug: "aberdare",
     name: "Aberdare",
     oneLineDraw: "Mountain forest, bongo and elephant.",
-    heroImage:
-      "https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=1920&q=80",
+    heroImage: "/images/destinations/aberdare.webp",
     shortDescription:
       "High-altitude moorland and montane forest east of the Rift — best known for the floodlit waterhole hides where elephant, buffalo and the secretive bongo come in after dark.",
     whyGo: [
@@ -370,8 +363,7 @@ export const destinations: Destination[] = [
     slug: "diani-beach",
     name: "Diani Beach",
     oneLineDraw: "White sand. Indian Ocean. The other half of Kenya.",
-    heroImage:
-      "https://images.unsplash.com/photo-1571406761758-9a3eed5338ef?w=1920&q=80",
+    heroImage: "/images/destinations/diani-beach.webp",
     shortDescription:
       "The south coast — fine white sand, turquoise reef-protected water, and a slow rhythm that's the natural counterweight to a week in dust and game vehicles.",
     whyGo: [

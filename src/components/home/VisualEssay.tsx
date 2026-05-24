@@ -1,33 +1,32 @@
 import { SafeImage } from "@/components/ui/safe-image";
 
-// TODO: replace Unsplash placeholders with licensed photography before launch.
 const tiles = [
   {
-    src: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=1600&q=80",
+    src: "/images/visual-essay/lion-mara-dawn.webp",
     alt: "Lion in golden first light, Mara Triangle",
     caption: "Lion at first light, Mara Triangle",
     className: "col-span-6 row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=1200&q=80",
+    src: "/images/visual-essay/elephants-kilimanjaro.webp",
     alt: "Elephant herd silhouetted against Mount Kilimanjaro at sunrise",
     caption: "Elephants under Kilimanjaro, Amboseli",
     className: "col-span-3 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1516939884455-1445c8652f83?w=1200&q=80",
+    src: "/images/visual-essay/wild-dogs-laikipia.webp",
     alt: "Wild dog pack on the move in Laikipia scrubland",
     caption: "Wild dogs, Laikipia",
     className: "col-span-3 row-span-1",
   },
   {
-    src: "https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    src: "/images/visual-essay/reticulated-giraffe-samburu.webp",
     alt: "Reticulated giraffe close-up in northern Kenya scrub",
     caption: "Reticulated giraffe, Samburu",
     className: "col-span-3 row-span-2",
   },
   {
-    src: "https://images.pexels.com/photos/110820/pexels-photo-110820.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    src: "/images/visual-essay/flamingos-bogoria.webp",
     alt: "Pink flamingo flock on a Rift Valley lake at dawn",
     caption: "Flamingos, Lake Bogoria",
     className: "col-span-3 row-span-1",

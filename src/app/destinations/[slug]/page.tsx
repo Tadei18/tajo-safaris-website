@@ -33,6 +33,14 @@ const SPECIES_ICONS: Record<string, LucideIcon> = {
   Bird, Triangle, TreePine, Heart, Shell, Fish,
 };
 
+// Heroes default to a top-biased crop; these photos place their subjects in the
+// lower half, so they need a centred crop to avoid cropping the animals off.
+const HERO_OBJECT_POSITION: Record<string, string> = {
+  "maasai-mara": "object-center",
+  amboseli: "object-center",
+  tsavo: "object-center",
+};
+
 export const dynamic = "force-static";
 
 export async function generateStaticParams() {
@@ -76,7 +84,7 @@ export default async function DestinationPage({
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[center_30%]"
+            className={`object-cover ${HERO_OBJECT_POSITION[d.slug] ?? "object-[center_30%]"}`}
             aria-hidden
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/20" />

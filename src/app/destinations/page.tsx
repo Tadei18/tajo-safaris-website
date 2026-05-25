@@ -28,7 +28,7 @@ export default function DestinationsPage() {
             Where to point your binoculars.
           </h1>
           <p className="mt-4 max-w-2xl text-base text-white/85 sm:text-lg">
-            Eight Kenyan destinations, each with its own draw. Pick one, pair
+            Nine Kenyan destinations, each with its own draw. Pick one, pair
             them, or let us route a circuit.
           </p>
         </div>

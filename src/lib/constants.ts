@@ -8,11 +8,13 @@ export const siteUrl =
 
 // Contact details (placeholders — see env vars for production-routed values).
 export const contact = {
-  phoneDisplay: "+254 700 000 000",
-  phoneTel: "+254700000000",
-  whatsappNumber: "254700000000",
-  email: "hello@tajosafarisandtours.com",
-  address: "Karen Road, Nairobi, Kenya",
+  phoneDisplay: "+254 708 754 111",
+  phoneTel: "+254708754111",
+  phoneDisplay2: "+254 731 737 921",
+  phoneTel2: "+254731737921",
+  whatsappNumber: "254708754111",
+  email: "info@tajosafarisandtours.com",
+  address: "Hilton Hotel Building, Mama Ngina Street, Nairobi, 1st Floor, Room 1",
   hours: "Mon–Sat, 8am–6pm EAT",
   timezone: "Nairobi (GMT+3)",
 };

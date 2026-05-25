@@ -3,10 +3,36 @@ import Image from "next/image";
 import Link from "next/link";
 import { SafeImage } from "@/components/ui/safe-image";
 import { guides } from "@/data/guides";
+import { getDestination } from "@/data/destinations";
 import { aboutMetadata } from "@/data/seo";
 import { Button } from "@/components/ui/button";
+import type { DestinationSlug } from "@/types";
 
 export const metadata: Metadata = aboutMetadata;
+
+// The parks where Tajo has the deepest guide / camp / conservancy relationships.
+const majorDestinations: { slug: DestinationSlug; copy: string }[] = [
+  {
+    slug: "maasai-mara",
+    copy: "Our home park. We work primarily in the Mara Triangle and the northern conservancies (Naboisho, Mara North, Olare Motorogi) — fewer vehicles, off-track game drives, and guides who have tracked these specific lion prides for years. We avoid the central reserve in peak season unless a client specifically wants it.",
+  },
+  {
+    slug: "amboseli",
+    copy: "Kilimanjaro views, big-tusker elephants, and one of the few parks where you can predict elephant behaviour because the same family groups have been studied here since the 1970s. We use small mid-range camps in the Kimana corridor — quieter, with better elephant viewing than the main park gates.",
+  },
+  {
+    slug: "samburu",
+    copy: "Northern Kenya, semi-arid, and home to the species you won't see further south — reticulated giraffe, Grevy's zebra, gerenuk, Beisa oryx. We pair Samburu with Ol Pejeta and Lewa for travelers who want the wildlife without the crowds.",
+  },
+  {
+    slug: "ol-pejeta",
+    copy: "Kenya's rhino stronghold and home to the world's last two northern white rhinos. We have direct conservancy partnerships here, which means our clients get behind-the-scenes access — anti-poaching unit visits, chimp sanctuary, night drives — that day-trippers can't book.",
+  },
+  {
+    slug: "lake-naivasha",
+    copy: "Our preferred soft landing. Ninety minutes from Nairobi, no flights needed, and you're on a boat among hippos and fish-eagles by lunchtime. We use Naivasha as a warm-up before the Mara or as a relaxed wind-down — and Crescent Island is one of the most underrated walking safaris in the country.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -39,30 +65,89 @@ export default function AboutPage() {
           <div className="lg:col-span-2">
             <p className="eyebrow text-primary">Founder</p>
             <h2 className="h2-section mt-3 font-display font-medium text-ink">
-              Built by a guide, for travellers who came for the real thing.
+              Why we started Tajo
             </h2>
           </div>
           <div className="space-y-5 text-base leading-relaxed text-ink-soft lg:col-span-3">
             <p>
-              Tajo was founded in 2017 by a small group of working safari
-              guides who&apos;d spent fifteen years between them watching
-              international operators sell shrink-wrapped versions of Kenya
-              to travellers who&apos;d come for something quite different.
+              Tajo started where every good safari story should — with a guide
+              who couldn&apos;t stop talking about the bush. We&apos;re a
+              Nairobi-based outfit, family-run, built around the idea that a
+              great safari isn&apos;t sold from a brochure. It&apos;s built
+              around you, in conversation, by people who actually know where
+              the leopards have been hunting this week.
             </p>
             <p>
-              The pattern was clear: the people doing the trip planning sat in
-              other countries, the budgets were squeezed at the lodge end so
-              margins held up, and the travellers were quietly subsidising
-              vehicles full of strangers in the parks that mattered most. We
-              thought it was possible to do better — Kenyan-owned, Kenyan-run,
-              guides paid properly, itineraries built one at a time.
+              We do this because we love it. The team here grew up reading
+              these landscapes — the dust patterns, the bird calls, the way the
+              wildebeest move in October. Every itinerary we send out gets
+              written by someone who has personally been in the camp, eaten the
+              food, met the guides. No middlemen, no boilerplate, no copy-paste
+              pricing.
             </p>
             <p>
-              We started with three vehicles and one office in Karen. Eight
-              years on, that&apos;s still the office, and most of the guides
-              who joined in 2017 are still on the team. The trips are still
-              built one at a time. The aim hasn&apos;t changed.
+              We&apos;re not the biggest operator in Kenya. We&apos;re not
+              trying to be. What we are is the operator that picks up when you
+              call, answers your follow-up question within the hour, and treats
+              your trip like it&apos;s the only one we&apos;re running. Whether
+              it&apos;s your first safari or your fifth, we&apos;ll build it
+              around what you actually came for.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Destinations we major in */}
+      <section className="bg-bg pb-20 md:pb-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <header className="max-w-2xl">
+            <p className="eyebrow text-primary">Where We Operate</p>
+            <h2 className="h2-section mt-3 font-display font-medium text-ink">
+              Destinations we major in.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-ink-soft">
+              Kenya is big. We don&apos;t claim to know every corner of it
+              equally well. These are the parks and conservancies where we have
+              the deepest relationships — the guides, the camps, the conservancy
+              partners. When you book one of these, you&apos;re getting our best.
+            </p>
+          </header>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {majorDestinations.map((m) => {
+              const d = getDestination(m.slug);
+              if (!d) return null;
+              return (
+                <article
+                  key={m.slug}
+                  className="flex flex-col overflow-hidden rounded-2xl bg-surface shadow-soft"
+                >
+                  <div className="relative aspect-[16/10]">
+                    <SafeImage
+                      src={d.heroImage}
+                      alt={d.name}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col gap-3 p-6">
+                    <h3 className="font-display text-2xl font-semibold text-ink">
+                      {d.name}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-ink-soft">
+                      {m.copy}
+                    </p>
+                    <Link
+                      href={`/destinations/${m.slug}` as `/destinations/${string}`}
+                      className="mt-auto pt-1 text-sm font-semibold text-accent-deep hover:text-accent"
+                    >
+                      Plan a {d.name} safari →
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

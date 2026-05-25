@@ -183,6 +183,11 @@ export function Footer() {
               </a>
             </li>
             <li>
+              <a href={`tel:${contact.phoneTel2}`} className="hover:text-accent">
+                {contact.phoneDisplay2}
+              </a>
+            </li>
+            <li>
               <a
                 href={`mailto:${contact.email}`}
                 className="hover:text-accent"

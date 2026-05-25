@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
 import { cn } from "@/lib/utils";
@@ -133,6 +134,15 @@ export function Testimonials() {
               )}
             />
           ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link
+            href="/reviews"
+            className="text-accent-deep hover:text-accent underline-offset-4 hover:underline text-sm font-medium"
+          >
+            Read more reviews →
+          </Link>
         </div>
       </div>
     </section>

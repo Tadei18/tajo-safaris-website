@@ -22,6 +22,7 @@ import { InquirySidebar } from "@/components/tours/InquirySidebar";
 import { RouteMap } from "@/components/tours/RouteMap";
 import { Gallery } from "@/components/tours/Gallery";
 import { FaqAccordion } from "@/components/tours/FaqAccordion";
+import { RelatedReviews } from "@/components/tours/RelatedReviews";
 import { MobileInquiryBar } from "@/components/tours/MobileInquiryBar";
 import { Button } from "@/components/ui/button";
 import { formatUsd } from "@/lib/utils";
@@ -251,6 +252,9 @@ export default async function TourPage({
             </div>
           </div>
         </div>
+
+        {/* 10b. Reviews for this safari */}
+        <RelatedReviews tourSlug={tour.slug} />
 
         {/* 11. Related safaris */}
         {related.length > 0 && (

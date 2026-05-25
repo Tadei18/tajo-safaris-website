@@ -12,7 +12,7 @@ export function DestinationsStrip() {
           </h2>
         </header>
 
-        <div className="mt-10 snap-strip flex gap-5 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:overflow-visible md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4">
+        <div className="mt-10 snap-strip flex gap-5 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 md:overflow-visible md:grid md:grid-cols-2 md:items-stretch md:gap-6 lg:grid-cols-3">
           {destinations.map((d) => (
             <div
               key={d.slug}

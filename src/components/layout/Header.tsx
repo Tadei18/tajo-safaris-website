@@ -26,7 +26,7 @@ function Logo({ transparent }: { transparent?: boolean }) {
         height={589}
         priority
         className={cn(
-          "h-12 w-auto lg:h-14 transition-opacity duration-300",
+          "h-14 w-auto lg:h-16 transition-opacity duration-300",
           transparent ? "opacity-100" : "opacity-0"
         )}
       />
@@ -38,7 +38,7 @@ function Logo({ transparent }: { transparent?: boolean }) {
         height={589}
         priority
         className={cn(
-          "absolute inset-y-0 left-0 h-12 w-auto lg:h-14 transition-opacity duration-300",
+          "absolute inset-y-0 left-0 h-14 w-auto lg:h-16 transition-opacity duration-300",
           transparent ? "opacity-0" : "opacity-100"
         )}
       />

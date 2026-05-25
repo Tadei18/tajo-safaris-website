@@ -30,6 +30,10 @@ export default function ContactPage() {
                 <a href={`tel:${contact.phoneTel}`} className="hover:text-primary">
                   {contact.phoneDisplay}
                 </a>
+                <br />
+                <a href={`tel:${contact.phoneTel2}`} className="hover:text-primary">
+                  {contact.phoneDisplay2}
+                </a>
               </ContactRow>
               <ContactRow icon={Mail} label="Email">
                 <a
@@ -58,11 +62,11 @@ export default function ContactPage() {
 
             {/* Map placeholder */}
             <div className="mt-10 aspect-[4/3] overflow-hidden rounded-2xl bg-sand">
-              {/* TODO: replace with an embedded Google or Mapbox map of Karen, Nairobi */}
+              {/* TODO: replace with an embedded Google or Mapbox map of Mama Ngina Street, Nairobi CBD */}
               <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-sand to-primary-300/40 text-center">
                 <MapPin className="size-8 text-primary" />
                 <p className="font-display text-lg font-semibold text-ink">
-                  Karen, Nairobi
+                  Mama Ngina Street, Nairobi
                 </p>
                 <p className="text-xs text-ink-soft">
                   (Interactive map coming soon)

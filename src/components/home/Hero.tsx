@@ -40,7 +40,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="eyebrow text-accent"
+          className="font-semibold uppercase tracking-[0.3em] text-accent text-sm md:text-base"
+        >
+          Tajo Safaris &amp; Tours
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.12 }}
+          className="mt-2 font-semibold uppercase tracking-[0.2em] text-xs text-sand"
         >
           Kenya · Tanzania · Beyond
         </motion.p>

@@ -262,6 +262,55 @@ export const destinations: Destination[] = [
     ],
   },
   {
+    slug: "lake-naivasha",
+    name: "Lake Naivasha",
+    oneLineDraw: "Hippos, fish-eagles, boats at dawn.",
+    heroImage: "/images/destinations/lake-naivasha.webp",
+    shortDescription:
+      "A freshwater Rift Valley lake fringed with papyrus and yellow-fever acacia, ninety minutes from Nairobi — boat safaris among hippos and fish-eagles, and free-roaming walks on Crescent Island.",
+    whyGo: [
+      "Naivasha is a rare freshwater lake in a Rift Valley otherwise ruled by soda lakes. Papyrus beds and yellow-fever acacia ring the shoreline, and the whole place sits about ninety minutes from Nairobi on a good road — which makes it the easiest soft landing or quick add-on in the country, with no internal flight required.",
+      "The experience set is unusually varied for somewhere this compact. Morning boat safaris put you within metres of hippo pods and fishing African fish-eagles. Crescent Island is a walking safari with no big cats, so you go on foot among giraffe, zebra, eland and waterbuck. And Hell's Gate — cycling between the cliffs, hiking the gorge — is a short drive away.",
+      "We like to open or close a trip here. As a warm-up it lets travellers shake off the long-haul flight at a gentle pace before the bigger parks; as a wind-down it's a calm, low-distance finish. Either way the manageable distance means you spend the day on the water and the trails, not on the road.",
+    ],
+    sizeKm2: 139,
+    bestMonths: ["Jun", "Jul", "Aug", "Sep", "Oct"],
+    monthlyScore: scores([4, 4, 3, 3, 3, 4, 5, 5, 5, 4, 3, 4]),
+    signatureWildlife: ["Hippopotamus", "African Fish-Eagle", "Black-and-white Colobus", "Giraffe"],
+    species: [
+      {
+        name: "Hippopotamus",
+        note: "Large resident pods — best seen from a boat at first light.",
+        icon: "Droplet",
+      },
+      {
+        name: "African Fish-Eagle",
+        note: "The iconic Rift call; pairs fish the lake edge at close range.",
+        icon: "Bird",
+      },
+      {
+        name: "Black-and-white Colobus",
+        note: "Troops in the yellow-fever acacias along the shoreline.",
+        icon: "TreePine",
+      },
+      {
+        name: "Maasai Giraffe",
+        note: "Walked among on foot on Crescent Island — no predators here.",
+        icon: "TreePine",
+      },
+      {
+        name: "Waterbuck",
+        note: "Shaggy lakeside antelope, easy to approach on the island.",
+        icon: "Triangle",
+      },
+      {
+        name: "Eland",
+        note: "Africa's largest antelope, grazing the open Crescent Island plain.",
+        icon: "Triangle",
+      },
+    ],
+  },
+  {
     slug: "ol-pejeta",
     name: "Ol Pejeta",
     oneLineDraw: "Conservation work made visible.",

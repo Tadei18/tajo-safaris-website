@@ -13,6 +13,7 @@ export type DestinationSlug =
   | "tsavo"
   | "samburu"
   | "lake-nakuru"
+  | "lake-naivasha"
   | "ol-pejeta"
   | "aberdare"
   | "diani-beach";

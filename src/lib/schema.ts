@@ -16,11 +16,11 @@ export function travelAgencyJsonLd() {
       "Private, guide-led safaris across Kenya. Tailored itineraries through the Maasai Mara, Amboseli, Samburu and beyond.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Karen Road",
+      streetAddress: "Hilton Hotel Building, Mama Ngina Street, 1st Floor, Room 1",
       addressLocality: "Nairobi",
       addressCountry: "KE",
     },
-    telephone: contact.phoneDisplay,
+    telephone: contact.phoneTel,
     email: contact.email,
     sameAs: [social.instagram, social.facebook, social.youtube, social.tiktok],
     areaServed: ["Kenya", "Tanzania", "East Africa"],

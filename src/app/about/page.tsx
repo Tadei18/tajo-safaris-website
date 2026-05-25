@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { SafeImage } from "@/components/ui/safe-image";
+import { GuideAvatar } from "@/components/about/GuideAvatar";
 import { guides } from "@/data/guides";
 import { getDestination } from "@/data/destinations";
 import { aboutMetadata } from "@/data/seo";
@@ -170,41 +170,36 @@ export default function AboutPage() {
             {guides.map((g) => (
               <article
                 key={g.name}
-                className="overflow-hidden rounded-2xl bg-surface shadow-soft"
+                className="flex flex-col items-center rounded-2xl bg-surface p-6 text-center shadow-soft"
               >
-                <div className="relative aspect-square">
-                  <Image
-                    src={g.photo}
-                    alt={`Portrait of ${g.name}`}
-                    fill
-                    sizes="(min-width: 1024px) 25vw, 50vw"
-                    className="object-cover"
-                  />
+                <div className="md:hidden">
+                  <GuideAvatar name={g.name} size={120} />
                 </div>
-                <div className="p-5">
-                  <h3 className="font-display text-xl font-semibold">
-                    {g.name}
-                  </h3>
-                  <p className="mt-1 text-xs text-ink-soft">
-                    {g.yearsInField} years in the field
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {g.languages.map((l) => (
-                      <span
-                        key={l}
-                        className="rounded-full bg-sand px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-ink"
-                      >
-                        {l}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="mt-3 text-sm font-medium text-primary">
-                    {g.specialty}
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                    {g.bio}
-                  </p>
+                <div className="hidden md:block">
+                  <GuideAvatar name={g.name} size={160} />
                 </div>
+                <h3 className="mt-5 font-display text-xl font-semibold">
+                  {g.name}
+                </h3>
+                <p className="mt-1 text-xs text-ink-soft">
+                  {g.yearsInField} years in the field
+                </p>
+                <div className="mt-3 flex flex-wrap justify-center gap-1.5">
+                  {g.languages.map((l) => (
+                    <span
+                      key={l}
+                      className="rounded-full bg-sand px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-ink"
+                    >
+                      {l}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-3 text-sm font-medium text-primary">
+                  {g.specialty}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                  {g.bio}
+                </p>
               </article>
             ))}
           </div>

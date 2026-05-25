@@ -114,7 +114,6 @@ export interface Testimonial {
 
 export interface Guide {
   name: string;
-  photo: string;
   yearsInField: number;
   languages: string[];
   specialty: string;

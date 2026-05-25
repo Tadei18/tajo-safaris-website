@@ -13,7 +13,7 @@ export function IntroBand() {
             <li key={d} className="flex gap-4">
               <span
                 aria-hidden
-                className="mt-2 inline-block size-2 shrink-0 rounded-full bg-accent"
+                className="mt-2 inline-block size-2 shrink-0 rounded-full bg-accent-deep"
               />
               <span className="text-base text-ink-soft">{d}</span>
             </li>

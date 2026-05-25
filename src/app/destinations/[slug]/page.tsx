@@ -206,7 +206,7 @@ export default async function DestinationPage({
           </p>
           <div className="mt-8 flex justify-center">
             <Link href="/contact">
-              <Button size="lg">Start Planning</Button>
+              <Button variant="accent" size="lg">Start Planning</Button>
             </Link>
           </div>
         </div>

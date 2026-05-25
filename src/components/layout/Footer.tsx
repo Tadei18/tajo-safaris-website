@@ -1,10 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { NewsletterForm } from "@/components/layout/NewsletterForm";
 import {
   contact,
   navLinks,
   siteName,
-  siteTagline,
   social,
   trustBadges,
 } from "@/lib/constants";
@@ -77,15 +77,18 @@ export function Footer() {
 
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
         <div>
-          <Link href="/" className="inline-flex items-baseline gap-2">
-            <span className="font-display text-3xl font-bold text-bg">Tajo</span>
-            <span className="text-[10px] uppercase tracking-[0.18em] text-bg/60">
-              Safaris &amp; Tours
-            </span>
+          <Link href="/" className="inline-block" aria-label={`${siteName} — Home`}>
+            <Image
+              src="/brand/tajo-logo-light.png"
+              alt={siteName}
+              width={600}
+              height={589}
+              className="h-20 w-auto"
+            />
           </Link>
           <p className="mt-4 text-sm leading-relaxed text-bg/70">
-            {siteTagline} Kenyan-owned, locally guided. We tailor every
-            itinerary around your dates, pace, and what you came to see.
+            Kenyan-owned, locally guided. We tailor every itinerary around
+            your dates, pace, and what you came to see.
           </p>
           <div className="mt-6 flex gap-3">
             <a

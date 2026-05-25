@@ -238,7 +238,7 @@ export function TourFilters({
         <p className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink">
           {resultCount} {resultCount === 1 ? "safari" : "safaris"} matching
           {hasFilters ? (
-            <span className="rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold text-ink">
+            <span className="rounded-full bg-accent-deep px-2 py-0.5 text-[10px] font-bold text-ink">
               {activeCount} active
             </span>
           ) : null}

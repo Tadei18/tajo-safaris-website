@@ -10,8 +10,8 @@ export function travelAgencyJsonLd() {
     "@type": "TravelAgency",
     name: siteName,
     url: siteUrl,
-    logo: `${siteUrl}/og-default.jpg`,
-    image: `${siteUrl}/og-default.jpg`,
+    logo: `${siteUrl}/brand/tajo-logo.png`,
+    image: `${siteUrl}/og-default.png`,
     description:
       "Private, guide-led safaris across Kenya. Tailored itineraries through the Maasai Mara, Amboseli, Samburu and beyond.",
     address: {

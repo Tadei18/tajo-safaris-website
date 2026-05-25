@@ -117,7 +117,7 @@ export default async function TourPage({
               </p>
             </div>
             <Link href="#inquire" className="hidden sm:block">
-              <Button size="lg">Inquire</Button>
+              <Button variant="accent" size="lg">Inquire</Button>
             </Link>
           </div>
         </div>

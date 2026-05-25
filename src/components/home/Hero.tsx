@@ -76,7 +76,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 1.5 }}
           className="mt-8 flex flex-wrap gap-3"
         >
-          <Button size="lg" onClick={() => chat.open()}>
+          <Button variant="accent" size="lg" onClick={() => chat.open()}>
             Plan Your Safari
           </Button>
           <Link href="/safaris">

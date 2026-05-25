@@ -148,7 +148,7 @@ export function MultiStepInquiry() {
                   className={cn(
                     "flex size-7 items-center justify-center rounded-full text-xs font-semibold transition-colors",
                     i < step && "bg-primary text-white",
-                    i === step && "bg-accent text-ink ring-4 ring-accent/20",
+                    i === step && "bg-accent-deep text-ink ring-4 ring-accent-deep/20",
                     i > step && "bg-sand text-ink-soft"
                   )}
                 >

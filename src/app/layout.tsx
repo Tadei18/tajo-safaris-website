@@ -23,7 +23,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#1F4A2E",
+  themeColor: "#1e3c1e",
   width: "device-width",
   initialScale: 1,
 };
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
       "Private, guide-led safaris across Kenya. Tailored itineraries through Maasai Mara, Amboseli, Samburu and beyond.",
     images: [
       {
-        url: "/og-default.jpg",
+        url: "/og-default.png",
         width: 1200,
-        height: 630,
+        height: 1178,
         alt: "Tajo Safaris and Tours",
       },
     ],
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: `${siteName} — Private Kenya Safaris, Tailored to You`,
     description:
       "Private, guide-led safaris across Kenya. Tailored itineraries through Maasai Mara, Amboseli, Samburu and beyond.",
-    images: ["/og-default.jpg"],
+    images: ["/og-default.png"],
   },
   robots: { index: true, follow: true },
 };

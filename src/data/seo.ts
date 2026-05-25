@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { siteName, siteUrl } from "@/lib/constants";
 import type { Tour, Destination } from "@/types";
 
-const defaultOg = "/og-default.jpg";
+const defaultOg = "/og-default.png";
 
 export const homeMetadata: Metadata = {
   title: `${siteName} — Private Kenya Safaris, Tailored to You`,

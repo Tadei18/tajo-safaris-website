@@ -30,7 +30,7 @@ export function FinalCTA() {
           template, no pressure.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <Button size="lg" onClick={() => chat.open()}>
+          <Button variant="accent" size="lg" onClick={() => chat.open()}>
             Start Planning
           </Button>
           <a

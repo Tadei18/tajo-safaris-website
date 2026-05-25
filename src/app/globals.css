@@ -1,16 +1,24 @@
 @import "tailwindcss";
 
 @theme {
+  /* Brand colors — V2 (new logo) */
   --color-bg: #faf6e8;
   --color-surface: #ffffff;
   --color-ink: #1c1816;
   --color-ink-soft: #4a423b;
-  --color-primary: #1f4a2e;
-  --color-primary-700: #163521;
-  --color-primary-300: #5c8a6d;
-  --color-accent: #d4a017;
-  --color-accent-600: #b38612;
-  --color-sand: #e8dcbc;
+
+  /* Greens — darker, matching new logo's "Safaris & Tours" */
+  --color-primary: #1e3c1e;
+  --color-primary-700: #0e2810;
+  --color-primary-300: #4a6b4a;
+
+  /* Yellow accent — marigold from logo. `accent` for dark bgs, `accent-deep`
+     for CTAs/text on light bgs. */
+  --color-accent: #f0b40f;
+  --color-accent-deep: #b88a0b;
+  --color-accent-300: #f8d266;
+
+  --color-sand: #f0e8d4;
   --color-rust: #9a4a1f;
 
   --font-display: var(--font-fraunces), Georgia, serif;
@@ -27,12 +35,13 @@
   --color-surface: #ffffff;
   --color-ink: #1c1816;
   --color-ink-soft: #4a423b;
-  --color-primary: #1f4a2e;
-  --color-primary-700: #163521;
-  --color-primary-300: #5c8a6d;
-  --color-accent: #d4a017;
-  --color-accent-600: #b38612;
-  --color-sand: #e8dcbc;
+  --color-primary: #1e3c1e;
+  --color-primary-700: #0e2810;
+  --color-primary-300: #4a6b4a;
+  --color-accent: #f0b40f;
+  --color-accent-deep: #b88a0b;
+  --color-accent-300: #f8d266;
+  --color-sand: #f0e8d4;
   --color-rust: #9a4a1f;
 }
 

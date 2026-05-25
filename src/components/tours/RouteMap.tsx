@@ -43,7 +43,7 @@ export function RouteMap({ stops }: { stops: RouteStop[] }) {
               cx={s.x}
               cy={s.y}
               r="1.6"
-              fill="var(--color-accent)"
+              fill="var(--color-accent-deep)"
               stroke="var(--color-ink)"
               strokeWidth="0.3"
             />

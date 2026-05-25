@@ -2,54 +2,46 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { navLinks, siteName, siteTagline } from "@/lib/constants";
+import { navLinks, siteName } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useChatLauncher } from "@/components/layout/ChatLauncher";
 
-function Wordmark({ inverted }: { inverted?: boolean }) {
+function Logo({ transparent }: { transparent?: boolean }) {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-3"
+      className="relative flex items-center"
       aria-label={`${siteName} — Home`}
     >
-      <div
+      {/* Light variant — shown when header is transparent over the dark hero */}
+      <Image
+        src="/brand/tajo-logo-light.png"
+        alt=""
+        aria-hidden
+        width={600}
+        height={589}
+        priority
         className={cn(
-          "flex size-10 items-center justify-center rounded-full transition-colors",
-          inverted ? "bg-white/15" : "bg-primary"
+          "h-12 w-auto lg:h-14 transition-opacity duration-300",
+          transparent ? "opacity-100" : "opacity-0"
         )}
-      >
-        <span
-          className={cn(
-            "font-display text-lg font-bold leading-none",
-            inverted ? "text-white" : "text-accent"
-          )}
-        >
-          T
-        </span>
-      </div>
-      <span className="flex flex-col leading-none">
-        <span
-          className={cn(
-            "font-display text-2xl font-bold tracking-tight",
-            inverted ? "text-white" : "text-ink"
-          )}
-        >
-          Tajo
-        </span>
-        <span
-          className={cn(
-            "text-[10px] uppercase tracking-[0.18em] mt-0.5",
-            inverted ? "text-white/80" : "text-ink-soft"
-          )}
-        >
-          Safaris &amp; Tours
-        </span>
-      </span>
-      <span className="sr-only">{siteTagline}</span>
+      />
+      {/* Dark variant — shown when the header is solid white */}
+      <Image
+        src="/brand/tajo-logo.png"
+        alt={siteName}
+        width={600}
+        height={589}
+        priority
+        className={cn(
+          "absolute inset-y-0 left-0 h-12 w-auto lg:h-14 transition-opacity duration-300",
+          transparent ? "opacity-0" : "opacity-100"
+        )}
+      />
     </Link>
   );
 }
@@ -90,7 +82,7 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
-        <Wordmark inverted={transparent} />
+        <Logo transparent={transparent} />
 
         <nav
           className="hidden md:flex items-center gap-8"
@@ -118,7 +110,11 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button onClick={openChat} size="md">
+          <Button
+            onClick={openChat}
+            size="md"
+            variant={transparent ? "accent" : "primary"}
+          >
             Plan Your Safari
           </Button>
         </div>

@@ -29,8 +29,8 @@ export function BestTimeChart({
                 <div
                   className={cn(
                     "w-full rounded-t-md transition-all",
-                    isPeak ? "bg-accent" : "bg-primary-300/70",
-                    score >= 5 && "bg-accent",
+                    isPeak ? "bg-accent-deep" : "bg-primary-300/70",
+                    score >= 5 && "bg-accent-deep",
                     score < 3 && "bg-primary-300/40"
                   )}
                   style={{ height: `${heightPct}%` }}
@@ -45,7 +45,7 @@ export function BestTimeChart({
       </div>
       <div className="mt-4 flex items-center justify-end gap-4 text-[11px] text-ink-soft">
         <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block size-2.5 rounded-sm bg-accent" /> Peak
+          <span className="inline-block size-2.5 rounded-sm bg-accent-deep" /> Peak
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span className="inline-block size-2.5 rounded-sm bg-primary-300/70" />{" "}
